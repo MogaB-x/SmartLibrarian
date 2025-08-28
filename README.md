@@ -26,6 +26,25 @@ Smart Librarian recommends books using **semantic search** (Chroma + embeddings)
 
 ---
 
+## Environment variables
+
+You must create a `.env` file inside the **backend/** folder with the following structure:
+
+```
+OPENAI_API_KEY=<your_openai_api_key>
+CHROMA_PATH=./data/chroma
+DATA_PATH=./data/book_summaries.md
+EMBED_MODEL=text-embedding-3-small
+GEN_MODEL=gpt-4.1-mini
+ALLOWED_ORIGINS=http://localhost:5173
+IMAGE_MODEL=gpt-image-1
+IMAGE_SIZE=1024x1024
+```
+
+This file is required for the backend to run correctly.
+
+---
+
 ## 1) Backend – Setup & Run
 
 ```bash
