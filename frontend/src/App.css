@@ -1,0 +1,239 @@
+/* Reset scurt ca să arate la fel peste tot */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Fundal general cu gradient subtil */
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background: linear-gradient(135deg, #f0f4ff, #f9f9fb);
+  color: #1a1a1a;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+/* Container central */
+.App {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Titlu mare cu accent */
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+/* Formularul */
+form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+form input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+form input:focus {
+  outline: none;
+  border: 1px solid #6e8bff;
+  box-shadow: 0 0 0 3px rgba(110, 139, 255, 0.2);
+}
+
+form button {
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  border: none;
+  background: #6e8bff;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+form button:hover {
+  background: #5a76e5;
+}
+
+form button:active {
+  transform: scale(0.97);
+}
+
+form button:disabled {
+  background: #aab3e0;
+  cursor: not-allowed;
+}
+
+/* Cardul rezultat */
+.result {
+  background: white;
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  margin-top: 1rem;
+  animation: fadeIn 0.4s ease;
+}
+
+.voice-card {
+  background: #fff;
+  border: 1px solid #e9ecf5;
+  border-radius: 14px;
+  padding: 14px;
+  margin: 12px 0;
+  box-shadow: 0 8px 24px rgba(16, 24, 40, 0.04);
+}
+
+.voice-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.voice-head h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.voice-status {
+  margin-left: auto;
+  font-size: 0.85rem;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #f4f6ff;
+  color: #3b5bdb;
+  border: 1px solid #dbe2ff;
+}
+
+.voice-controls {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  border: 1px solid #d7dbe7;
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn:hover { background: #c3d0f7; }
+.btn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+.btn-primary {
+  background: #6e8bff;
+  color: #fff;
+  border-color: #6e8bff;
+}
+.btn-primary:hover { filter: brightness(0.95); }
+
+.mic-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #16a34a; /* verde = idle/ready */
+}
+
+.mic-dot.recording {
+  background: #ef4444; /* roșu = recording */
+  box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.6);
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  to { box-shadow: 0 0 0 12px rgba(239, 68, 68, 0); }
+}
+
+.voice-timer {
+  font-variant-numeric: tabular-nums;
+  color: #475569;
+  font-size: 0.9rem;
+}
+
+.result h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+  color: #2c3e50;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero-img {
+  width: 100%;        
+  max-height: 410px;  
+  object-fit: cover; 
+  display: block;
+}
+
+
+.result img {
+  width: 100%;
+  max-height: 720px;
+  object-fit: cover;
+  border-radius: 2px;
+  margin: 1rem 0;
+  border: 1px solid #eee;
+}
+
+.result p {
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+.subtitle {
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #eee;
+}
+
+.divider {
+  height: 2px;
+  background: linear-gradient(90deg, #6e8bff, #19d2b8);
+  margin: 0.5rem 0 1rem;
+  border-radius: 2px;
+}
+
+/* Eroare */
+.result p[style*="color: red"] {
+  padding: 0.75rem;
+  background: #ffecec;
+  border: 1px solid #f5b5b5;
+  border-radius: 8px;
+}
+
+/* Rezumat complet */
+details summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #6e8bff;
+  margin-bottom: 0.5rem;
+}
+
+details p {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Animare simplă */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
